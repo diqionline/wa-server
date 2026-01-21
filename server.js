@@ -407,10 +407,15 @@ const startClient = async () => {
     }
 };
 
-startClient();
+// startClient(); // Moved to inside listen callback
 
-server.listen(PORT, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
+    console.log(`Health check endpoint available at /`);
+    
+    // [STABILITY] Delay client start to ensure server is ready and responsive first
+    console.log('Scheduling WhatsApp Client start in 5 seconds...');
+    setTimeout(startClient, 5000);
 });
 
 // Prevent process exit on unhandled errors
