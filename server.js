@@ -1,5 +1,7 @@
 const { Client, LocalAuth } = require('whatsapp-web.js');
 
+console.log('--- WA SERVER VERSION 2.1 (WITH LOGGING) STARTED ---');
+
 const originalInject = Client.prototype.inject;
 Client.prototype.inject = async function(...args) {
     try {
