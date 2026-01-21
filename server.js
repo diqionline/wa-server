@@ -409,7 +409,7 @@ const startClient = async () => {
 
 // startClient(); // Moved to inside listen callback
 
-server.listen(PORT, '0.0.0.0', () => {
+server.listen(PORT, '3.0.0.0', () => {
     console.log(`Server is running on port ${PORT}`);
     console.log(`Health check endpoint available at /`);
     
